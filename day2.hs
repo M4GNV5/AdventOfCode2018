@@ -1,12 +1,12 @@
 import Data.List
 import Data.Maybe
 
-hasCharNTimes n xs = any (\c -> n == (length $ elemIndices c xs)) xs
 
 part1 xs = (length two) * (length three)
     where
-        two     = filter (hasCharNTimes 2) xs
-        three   = filter (hasCharNTimes 3) xs
+        two                     = filter (hasCharNTimes 2) xs
+        three                   = filter (hasCharNTimes 3) xs
+        hasCharNTimes n xs      = any (\c -> n == (length $ elemIndices c xs)) xs
 
 part2 xs = snd $ fromJust $ find (\(c,_) -> c == 1) allComparasions
     where
